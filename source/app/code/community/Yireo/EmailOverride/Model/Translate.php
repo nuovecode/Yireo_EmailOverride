@@ -23,11 +23,6 @@ class Yireo_EmailOverride_Model_Translate extends Mage_Core_Model_Translate
      */
     protected function _getModuleFilePath($module, $fileName)
     {
-        // If this is the backend, we return to the default
-        if ($this->isAdmin() == true) {
-            return parent::_getModuleFilePath($module, $fileName);
-        }
-
         // If no locale is set, we return to the default
         $localeCode = $this->getLocale();
         if (empty($localeCode)) {
